@@ -1,0 +1,32 @@
+body{
+    padding-top: 90px;
+}
+body.light {
+  // background: #f9f9f9;
+  background: #f0f2f5;
+   background-image: url("/imagePort/62624.jpg");
+  background-size: cover;        
+  background-repeat: repeat;  
+  background-position: center;   
+  min-height: 100vh;   
+  color: #111;
+}
+
+body.dark {
+  background-image: url("/imageSlide/Screenshot_20240609_121909.jpg");
+  background-size: cover;        
+  background-repeat: repeat;  
+  background-position: center;   
+  min-height: 100vh;             
+  color: #f1f1f1;
+
+
+  h2 ,
+  .paraColor{
+    color: #f1f1f1;
+  }
+}
+
+body.dark a {
+  color: #f0a500;
+}

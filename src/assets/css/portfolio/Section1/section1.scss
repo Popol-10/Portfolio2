@@ -1,0 +1,150 @@
+
+@import "../../library/layout/layout.scss";
+
+
+#section1 {
+  @include size($wd: 100vw, $ht: 45vw);
+  @include flex($jc: space-around);
+  padding-top: 8vw;
+  // background: #000;
+  // position: relative;
+  
+
+  #ContainerS {
+    @include size($wd: 30vw, $ht: 35vw);
+    padding: 1vw;
+    // background: #000;
+
+
+    img {
+      @include size($wd: 20vw, $ht: 20vw);
+      box-shadow: 0 0 3vw rgb(133, 75, 75);
+      border-radius: 50vw;
+      border: rgb(133, 75, 75) solid 0.2vw;
+      margin-left: 4vw;
+      opacity: 0;
+      animation: fadeIn 2s ease-out forwards;
+    }
+
+    h1 {
+      font-size: 3vw;
+      color: rgb(133, 75, 75);
+      text-align: center;
+    }
+    .CV{
+      @include button($hover-bg:rgb(133, 75, 75));
+      background:linear-gradient(white, rgb(133, 75, 75));
+      @include size($wd:17vw,$ht:3.5vw);
+      color: black; 
+      font-weight: bold;
+      font-size: 1.5vw;
+      border: none;
+      padding: 1vw;
+      margin-left: 5vw;
+      margin-top: 2vw;
+      
+      text-decoration: none;
+      &:hover{
+        color: rgb(138, 50, 50);
+      }
+  }
+
+    #devT {
+      font-size: 2vw;
+      text-align: center;
+      color: beige;
+      text-transform: uppercase;
+
+      .cursor {
+        display: inline-block;
+        margin-left: 2px;
+        animation: blink 1s infinite;
+      }
+    }
+  }
+
+  #Container2 {
+    @include size($wd: 40vw, $ht: 35vw);
+    padding: 1vw;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+
+    h3 {
+      font-size: 2vw;
+      text-align: center;
+      margin-bottom: 1vw;
+      color: rgb(133, 75, 75);
+
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      font-family: "Segoe UI";
+      font-size: 1.3vw;
+      color: beige;
+    }
+  }
+}
+
+
+
+@include mobile {
+  #section1 {
+    height: auto;
+    padding-top: 5vw;
+    @include flexColumn($jc:center, $ac:center);
+    
+
+    #ContainerS {
+      width: 95vw;
+      height: auto;
+      img {
+        width: 50vw;
+        height: 50vw;
+        margin-left: 22vw;
+      }
+      h1 {
+        font-size: 5vw;
+      }
+      #devT {
+        font-size: 4vw;
+      }
+
+      .CV{
+        font-size: 2vw;
+        width: 25vw;
+        height: 5vw;
+        margin: auto;
+      }
+    }
+
+    #Container2 {
+      width: 95vw;
+      height: auto;
+      h3 {
+        font-size: 3.5vw;
+      }
+      p {
+        font-size: 2.8vw;
+        text-align: left;
+        margin-left: 5vw;
+      }
+    }
+  }
+}
+
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

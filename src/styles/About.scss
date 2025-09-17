@@ -1,0 +1,109 @@
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  margin: 0 auto;
+}
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: left;
+
+  .about-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #f0a500;
+    }
+
+    .below-image {
+      text-align: center;
+
+      h1 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        margin: 0 auto;
+      }
+
+      #devT {
+        font-size: 1.2rem;
+        color: #f0a500;
+        margin-bottom: 1rem;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        background: #f0a500;
+        margin-left: 3px;
+        animation: blink 0.8s infinite;
+      }
+
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+
+      .CV {
+        display: inline-block;
+        padding: 0.6rem 1.2rem;
+        background: #f0a500;
+        color: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+
+        &:hover {
+          background: #d18f00;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .about-right {
+    max-width: 500px;
+
+    p {
+      line-height: 1.6;
+
+      h4 {
+        font-size: 1.4rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+/* 🌞 Mode clair */
+body.light {
+  .below-image h1,
+  .about-right p,
+  .about-right h4 {
+    color: #222;
+  }
+}
+
+/* 🌙 Mode sombre */
+body.dark {
+  .below-image h1,
+  .about-right p,
+  .about-right h4 {
+    color: #f1f1f1;
+  }
+}

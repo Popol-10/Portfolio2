@@ -3,16 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
+  width: 100%;
   z-index: 1000;
-  // background: var(--bg);
   background: rgba(0, 0, 0, 0.733);
-  // color: var(--text);
-  color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  color:  white; // texte par défaut
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   .logo {
     font-size: 1.3rem;
@@ -27,7 +25,8 @@
     li a {
       font-size: 1.3rem;
       text-decoration: none;
-      color: inherit;
+      // color: var(--text, white);
+      color: white;
       font-weight: 500;
       transition: color 0.3s;
 
@@ -41,44 +40,43 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
 
-  .theme-toggle {
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-     transition: transform 0.3s;
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      transition: transform 0.3s;
 
-    &:hover {
-      transform: rotate(20deg);
-    }
-  }
-
-  /* Hamburger (mobile) */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 0.3rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    span {
-      width: 25px;
-      height: 3px;
-      background: var(--text);
-      transition: all 0.3s;
+      &:hover {
+        transform: rotate(20deg);
+      }
     }
 
-    &.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    &.active span:nth-child(2) {
-      opacity: 0;
-    }
-    &.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      span {
+        width: 25px;
+        height: 3px;
+        background: var(--text, white);
+        transition: all 0.3s;
+      }
+
+      &.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      &.active span:nth-child(2) {
+        opacity: 0;
+      }
+      &.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
     }
   }
 }
@@ -90,7 +88,7 @@
       position: absolute;
       top: 60px;
       right: 0;
-      background: var(--bg);
+      background: white;
       flex-direction: column;
       gap: 1.5rem;
       width: 200px;
@@ -99,21 +97,31 @@
       transition: transform 0.3s ease-in-out;
 
       &.open {
+        // background: black;
         transform: translateX(0);
       }
-    }
 
-    .hamburger {
-      display: flex;
+      li a {
+        color: #111; // liens visibles en mobile
+      }
+    }
+    
+
+    .actions {
+      .hamburger {
+        display: flex;
+        span{
+          background: #f1f1f1;
+        }
+      }
+    }
+  }
+  body.dark{
+    .nav-links{
+      background: #111;
+      li a {
+        color: #f1f1f1; // liens visibles en mobile
+      }
     }
   }
 }
-
-
-
-
-
-
-
-
-

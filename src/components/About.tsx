@@ -8,7 +8,7 @@ import { useInView } from "react-intersection-observer";
 
 const About: React.FC = () => {
   const profilePic = "/imagePort/popol2.jpg";
-  const Cv = "/cvdev2.pdf"
+  const Cv = "/CV.TRD.pdf"
   const {ref, inView} = useInView({
     triggerOnce:true,
     threshold:0.2,
@@ -71,12 +71,12 @@ const About: React.FC = () => {
         
         <motion.div 
           className="about-right"
-          initial={{y:100,opacity:0}}
-          animate={inView ? {y:0 , opacity:1} : {}}
-          transition={{duration:3}}
+          initial={{ y: 100, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 3 }}
         >
-          <p className="paraColor">
             <h4>Razafindrainibe Avotra Harilala Patrick</h4>
+          <p className="paraColor">
             Je suis un développeur web passionné, spécialisé dans la création de
             sites modernes, responsives et adaptés à tous les supports.
             <br />
